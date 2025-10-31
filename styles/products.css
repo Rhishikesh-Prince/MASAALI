@@ -1,0 +1,910 @@
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #faf9f7;
+  margin: 0;
+  padding: 0;
+  color: #222;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* max-width: 100%; */
+    
+}
+html, body {
+  overflow-x: hidden;
+}
+nav{
+    position: fixed;
+    width: 100%;
+    /* top: 0%; */
+   transition: top 0.3s ease;
+    z-index: 9999;
+
+}
+/* This targets ALL links inside ANY element on the page */
+* a {
+  text-decoration: none;
+  color: inherit; 
+}
+/* This targets links that are visited (the blue is often a "visited" link color) */
+a:visited, a:active, a:link {
+  text-decoration: none;
+  color: inherit; 
+}
+
+
+/* ---------------- NAV TOP ---------------- */
+.nav-top {
+    background-color: #f7a800;
+    height: 3vh;
+    color: white;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+.marquee-container {
+    width: 100%;
+    overflow: hidden;
+}
+
+.marquee-content-wrapper {
+    display: inline-flex;
+    white-space: nowrap;
+    animation: scroll-left 15s linear infinite;
+}
+
+.marquee-text-copy {
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.9rem;
+    color: white;
+    margin-right: 2rem; /* spacing between repeated text */
+}
+
+@keyframes scroll-left {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+/* ---------------- NAV MID ---------------- */.nav-mid {
+    width: 100%;
+    height: 10.5vh;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+/* -------- SEARCH BAR TRANSITION -------- */
+.nav-mid {
+  position: relative;
+  transition: all 0.4s ease;
+  overflow: hidden;
+}
+
+.nav-search {
+  position: absolute;
+  inset: 0;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-20px);
+  transition: all 0.4s ease;
+}
+
+.nav-search input {
+  width: 70%;
+  max-width: 600px;
+  padding: 10px 15px;
+  border: 1.5px solid #ccc;
+  border-radius: 30px;
+  outline: none;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+.nav-search input:focus {
+  border-color: rgba(246, 155, 0, 1);
+}
+
+.nav-search i.close-search {
+  font-size: 20px;
+  cursor: pointer;
+  color: #444;
+}
+
+/* Active state */
+.nav-mid.active .nav-mid-sec {
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-20px);
+  transition: all 0.3s ease;
+}
+
+.nav-mid.active .nav-search {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.nav-mid-sec {
+    width: 90%;
+    display: flex;
+    align-items: center;
+}
+
+.nav-left,
+.nav-center,
+.nav-right {
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
+
+.nav-left {
+    justify-content: flex-start;
+}
+
+.nav-center {
+    justify-content: center;
+}
+
+.nav-right {
+    justify-content: flex-end;
+    gap: 20px;
+}
+
+.nav-center img {
+    max-height: 80px;
+    width: auto;
+}
+
+.nav-right i,
+.nav-left i {
+    font-size: 20px;
+    cursor: pointer;
+}
+/* ---------- SIDE MENU ---------- */
+.side-menu {
+  position: fixed;
+  top: 0;
+  left: -260px; /* hidden initially */
+  width: 250px;
+  height: 100vh;
+  background-color: white;
+  box-shadow: 2px 0 10px rgba(0,0,0,0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  padding: 20px;
+  gap: 15px;
+  transition: left 0.4s ease;
+  z-index: 2000;
+}
+
+.side-menu.active {
+  left: 0;
+}
+
+.side-menu-header {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.close-menu {
+  font-size: 22px;
+  cursor: pointer;
+  color: #444;
+}
+
+.side-menu-links {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  width: 100%;
+}
+
+.side-menu-links a {
+  text-decoration: none;
+  color: rgba(107, 0, 7, 1);
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.1rem;
+  transition: color 0.2s ease-in-out;
+}
+
+.side-menu-links a:hover {
+  color: rgba(246, 155, 0, 1);
+}
+
+/* Overlay for background blur */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.3);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+  z-index: 1500;
+}
+
+.overlay.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* -----------RESPONSIVE ADJUSTMENTS----------- */
+
+/* Large desktops and TVs */
+@media screen and (max-width: 1400px) {
+}
+
+/* Desktops */
+@media screen and (max-width: 1200px) {
+}
+
+/* Small laptops / large tablets */
+@media screen and (max-width: 992px) {
+  .nav-links { display: none; } /* hide bottom nav-links */
+}
+
+/* Tablets */
+@media screen and (max-width: 768px) {
+  .nav-links { display: none; }
+  .side-menu { width: 230px; }
+}
+
+/* Small devices (phones) */
+@media screen and (max-width: 600px) {
+  .nav-links { display: none; }
+  .side-menu { width: 220px; }
+  .side-menu-links a { font-size: 1rem; }
+}
+
+/* ---------------- NAV BOTTOM ---------------- */
+.nav-btm-sec {
+    height: 5.5vh;
+    background-color: rgba(107, 0, 7, 1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.nav-links {
+    display: flex;
+    gap: 4rem;
+    flex-wrap: wrap; /* allows links to wrap on small screens */
+    justify-content: center;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: clamp(0.8rem, 1vw, 2rem);
+    position: relative;
+    padding: 5px 0;
+    transition: color 0.2s;
+}
+.nav-links a::before {
+    content: '|';
+    color: transparent;
+    position: absolute;
+    left: -1rem;
+    transition: color 0.2s ease-in-out;
+}
+
+.nav-links a:hover {
+    color: rgba(246, 155, 0, 1);
+}
+
+.nav-links a:hover::before {
+    color: rgba(246, 155, 0, 1);
+}
+/* footer  */
+
+
+/* Base styles provided by the user */
+footer {
+    height: 58.57vh; /* Approximately 500px in the image's context, but using the vh unit as requested */
+    /* border: 2px solid rebeccapurple; As requested */
+    margin-top: 10vh;
+    /* Custom styles to match the image */
+    background-color: rgba(27, 0, 0, 1); /* Dark brown background color */
+    color: #ffffff; /* Default text color */
+    font-family: sans-serif; /* A common sans-serif font */
+    padding: 60px 10%; /* Top/bottom padding and side padding */
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Pushes the bottom bar to the bottom */
+}
+
+
+
+
+/* --- Main Content Layout --- */
+.footer-content-wrapper {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1200px; /* Optional: to limit content width on large screens */
+    margin: 0 auto;
+    padding-bottom: 40px; /* Space above the bottom line */
+}
+
+/* --- Headings and Links --- */
+h3 {
+    
+    /* font-weight: bold; */
+    margin-bottom: 20px;
+    border-bottom: 1px solid #f29a07; /* Orange underline for headings */
+    display: inline-block; /* Makes the border only as wide as the text */
+    padding-bottom: 5px;
+    font-size: 0.5rem;
+    color: #a0a0a0;
+    
+}
+
+.footer-links-group ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    
+}
+
+.footer-links-group a {
+    color: #a0a0a0; /* Lighter grey for general links */
+    text-decoration: none;
+    line-height: 2.2; /* Spacing between links */
+    font-size: 1rem;
+    display: block;
+    
+}
+
+.footer-links-group a:hover {
+    color: #f29a07; /* Hover effect */
+}
+
+/* Highlight the first link in 'Popular Products' (Coriander Seeds) */
+.footer-links-group:first-of-type ul li:first-child a {
+    color: #f29a07; /* Orange color for the highlighted seed */
+}
+
+/* --- Brand and Social Section --- */
+.footer-brand-section {
+    flex: 1; /* Allows it to take up more space */
+    max-width: 250px;
+}
+
+.logo img {
+    /* Assuming the logo is an image. Adjust styles based on actual logo size */
+    width: 200px; /* Example size */
+    margin-bottom: 10px;
+    filter: brightness(0) invert(1);
+
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.social-icons a {
+    /* Styles for the circular, dark icons */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    border: 2px solid #f29a07; /* Orange border */
+    background-color: transparent;
+    transition: background-color 0.3s;
+    /* align-items: center;
+    justify-content: center;
+    display: flex; */
+}
+
+.social-icons a:hover {
+    background-color: #f29a07;
+}
+
+.social-icons  i{
+   font-size: 20px;
+
+    filter: brightness(0) invert(1); /* Assuming icons are dark and need to be white */
+}
+/* --- Contact Section --- */
+.footer-contact-section {
+    flex: 1.5;
+    max-width: 350px;
+}
+
+.contact-text, .contact-info {
+    font-size: 1rem;
+    color: #a0a0a0;
+    margin-bottom: 15px;
+    line-height: 1.5;
+    /* Use flexbox for icon and text alignment */
+    display: flex;
+    align-items: flex-start;
+}
+
+/* This targets the icon placeholder span */
+.icon-placeholder {
+    /* The image icons are small white shapes inside or next to the text */
+    /* If using a Font Icon Library (recommended), you'd replace the content here */
+    color: white; /* Color of the icon itself */
+    font-size: 0.8rem; /* Smaller icon size */
+    margin-right: 10px;
+    /* Styles to mimic the subtle icon look */
+    width: 20px; /* Ensures text is pushed over */
+    height: 20px;
+    text-align: center;
+    line-height: 20px;
+    flex-shrink: 0;
+}
+
+
+/* --- Contact Section --- */
+.footer-contact-section {
+    flex: 1.5;
+    max-width: 350px;
+}
+
+.contact-text, .contact-info {
+    font-size: 1rem;
+    color: #a0a0a0;
+    margin-bottom: 15px;
+    line-height: 1.5;
+    /* Use flexbox for icon and text alignment */
+    display: flex;
+    align-items: flex-start; /* Aligns items to the top (important for multi-line text) */
+}
+
+/* New CSS to style the Font Awesome icons */
+.icon-style {
+    color: #ffffff; /* White color for the icon, as seen in the image */
+    font-size: 0.9rem; /* Small icon size */
+    margin-right: 10px;
+    width: 20px; /* Ensures the text is pushed over consistently */
+    text-align: center;
+    line-height: inherit; /* Inherit line height for vertical alignment */
+    flex-shrink: 0; /* Prevents the icon from shrinking */
+    padding-top: 2px; /* Slight adjustment to align with text visually */
+}
+
+.footer-contact-section a {
+    color: #a0a0a0;
+    text-decoration: none;
+}
+
+.highlight-number {
+    color: #f29a07;
+    font-weight: bold;
+}
+/* --- Bottom Bar --- */
+.footer-bottom-bar {
+    width: 100%;
+    /* This line separates the main content from the copyright bar */
+    border-top: 1px solid #4a251b; 
+    padding-top: 20px;
+    
+    /* Key change: Use Flexbox to align items and space them out */
+    display: flex;
+    justify-content: space-between; /* Pushes the two items to opposite ends */
+    align-items: center; /* Vertically centers the text and link */
+    
+    font-size: 0.9rem;
+    color: #a0a0a0;
+    margin-top: 30px; /* Provides separation from the main content */
+}
+
+.footer-bottom-bar a {
+    color: #a0a0a0;
+    text-decoration: none;
+}
+
+.footer-bottom-bar a:hover {
+    color: #f29a07; /* A subtle hover effect */
+}
+
+
+/* <!-- THIRD/PRODUCT SECTION --> */
+
+.products {
+    width: 90%;
+    margin: auto;
+    margin-top:20vh;
+    /* z-index: -3; */
+    /* display: flex; */
+    align-items: center;
+    justify-content: center;
+}
+
+/* Header */
+.products-header p {
+    font-size: 14px;
+    font-weight: 700;
+    color: #000;
+    font-family: 'Roboto', sans-serif;
+}
+
+.products-header h2 {
+    font-size: 28px;
+    color:rgba(246, 155, 0, 1);
+    margin-bottom: 20px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+}
+
+/* Category Menu */
+
+/* Wrap header and categories in a flex container */
+.products-header-wrapper {
+    display: flex;
+    justify-content: space-between; /* Header left, categories right */
+    align-items: center;
+    margin-bottom: 10px; 
+    /* border: #000 solid;spacing from grid */
+}
+
+/* Adjust .products-header styling to remove bottom margin */
+.products-header {
+    margin: 0;
+}
+
+.product-categories {
+    list-style: none;
+    display: flex;
+    gap: 35px;
+    margin-bottom: 40px;
+    padding-left: 0;
+}
+
+.product-categories li a {
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 500;
+    color: #000;
+    position: relative;
+    opacity: 0.42;
+}
+
+.product-categories li a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+    height: 3px;
+    width: 0%;
+    background: #f7a800;
+    transition: width 0.3s ease;
+    
+}
+
+.product-categories li a:hover::after,
+.product-categories li a.active::after {
+    width: 100%;
+    
+}
+.product-categories li a:hover,
+.product-categories li a.active {
+    opacity: 1; /* Fully opaque (100%) on hover or when active */
+}
+
+/* Grid */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    /* gap: 10%px; */
+    /* border: 2px solid rgb(153, 51, 51); */
+    gap: 15px;
+    width: 80;
+}
+
+/* Product Card */
+.product-card {
+    text-align: left;
+    position: relative;
+    cursor: pointer;
+    /* border: 2px solid rgb(3, 207, 40); */
+    width: 100%;
+    /* height: 40vh; */
+    margin-bottom: 20%;
+
+}
+
+/* Product Image Box */
+.product-img {
+    /* width: 100%; */
+    height: 300px;
+    /* background: #680f0f; */
+    /* border-radius: 6px; */
+    transition: background-color 0.3s ease;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    /* position: absolute; */
+    
+}
+.product-img img{
+    height: 90%;
+    /* border: 2px solid rgb(3, 207, 40); */
+}
+
+/* Product Hover Highlight */
+.product-card:hover .product-img {
+    background: #fff2cb;
+}
+
+.product-name {
+    font-size: 20px;
+    font-weight: 400;
+    margin: 10px 0 4px;
+    font-family: 'Roboto', sans-serif;;
+}
+
+.product-price {
+    font-size: 22px;
+    font-weight: 700;
+    font-family: 'Roboto', sans-serif;;
+}
+
+.product-price span {
+    text-decoration: line-through;
+    font-weight: 400;
+    margin-left: 8px;
+    color: rgba(246, 155, 0, 1);
+}
+
+/* Discount Badge */
+.discount {
+    background: rgba(246, 155, 0, 1);
+    color: #fff;
+    font-size: 15px;
+    padding: 4px 8px;
+    border-radius: 4px;
+    width: fit-content;
+    /* margin-top: 6px; */
+    height: auto;
+    position: relative;
+    bottom: 6px;
+}
+.price-discount {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    position: absolute;
+    
+}
+
+.prodeuctcard-text{
+    /* display: grid; */
+    justify-content: space-around;
+    /* position: absolute; */
+}
+
+
+
+/* -----------RESPONSIVE ADJUSTMENTS----------- */
+
+/* Large desktops and TVs */
+@media screen and (max-width: 1400px) {
+    footer {
+        padding: 50px 6%;
+    }
+        .product-grid {
+        gap: 30px;
+    }
+}
+
+/* Desktops */
+@media screen and (max-width: 1200px) {
+    .footer-content-wrapper {
+        max-width: 1000px;
+        gap: 40px;
+    }
+        .product-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 28px;
+    }
+}
+
+/* Small laptops / large tablets */
+@media screen and (max-width: 992px) {
+    footer {
+        height: auto;
+        padding: 50px 5%;
+    }
+    .footer-content-wrapper {
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 30px;
+    }
+    
+    .footer-brand-section,
+    .footer-links-group,
+    .footer-contact-section {
+        flex: 1 1 45%;
+        max-width: none;
+    }
+
+    .footer-contact-section {
+        margin-top: 10px;
+    }
+
+    h3 {
+        margin-bottom: 15px;
+    }
+        .product-categories {
+        gap: 25px;
+    }
+
+    .product-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+    }
+
+    .product-img {
+        height: 200px;
+    }
+}
+
+/* Tablets */
+@media screen and (max-width: 768px) {
+    .footer-content-wrapper {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 35px;
+    }
+
+    .footer-brand-section {
+        text-align: center;
+    }
+
+    .social-icons {
+        justify-content: center;
+    }
+
+    footer {
+        height: auto;
+        padding: 40px 8%;
+    }
+
+    .footer-bottom-bar {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+        .product-categories {
+        font-size: 16px;
+        gap: 18px;
+        flex-wrap: wrap;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    .product-img {
+        height: 180px;
+    }
+
+    .product-name {
+        font-size: 15px;
+    }
+}
+
+/* Small devices (phones) */
+@media screen and (max-width: 600px) {
+    footer {
+        padding: 35px 6%;
+    }
+
+    .footer-content-wrapper {
+        gap: 30px;
+        text-align: center;
+    }
+
+    .footer-contact-section p {
+        justify-content: center;
+        text-align: center;
+    }
+
+    /* Reduce icon size a bit so they don’t look like beach balls */
+    .social-icons a {
+        width: 30px;
+        height: 30px;
+    }
+    .social-icons i {
+        font-size: 16px;
+    }
+
+    h3 {
+        font-size: 1.1rem;
+    }
+
+    .footer-links-group a,
+    .contact-text,
+    .contact-info {
+        font-size: 0.9rem;
+    }
+            .product-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 cards per row */
+        gap: 12px;
+    }
+    .products-header h2 {
+        font-size: 20px;
+    }
+    .product-img {
+        height: 160px;
+    }
+    .product-categories {
+        flex-wrap: wrap; /* so categories don’t overflow */
+        gap: 8px;
+    }
+    .product-categories li a {
+        font-size: 14px;
+    }
+        .products-header-wrapper {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+    .product-categories {
+        width: 100%;
+        justify-content: flex-start;
+        gap: 8px;
+    }
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 cards per row */
+        gap: 12px;
+    }
+    .product-img {
+        height: 160px;
+    }
+    .products-header h2 {
+        font-size: 20px;
+    }
+    .product-categories li a {
+        font-size: 14px;}
+        .discount{
+            display: none;
+        }
+    .products{
+        margin-top:15vh;
+    }
+    
+        .nav-btm-sec {
+      display: none;
+    }
+    .nav-mid{
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    }
+
+}
