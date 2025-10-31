@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Page</title>
+    <link rel="stylesheet" href="../styles/product-details.css">
+
+    <!-- BOOTSTRAP -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-..." crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-..." crossorigin="anonymous"></script>
+    <!-- FONTS -->
+    <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@100;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet" >
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <!-- ICONS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+</head>
+<body>
+              
+        <!-- Top Section -->
+    <div class="nav-top">
+        <div class="marquee-container">
+            <div class="marquee-content-wrapper d-flex">
+                <span class="marquee-text-copy">| Free Shipping on All Orders Above AED 100! &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                <span class="marquee-text-copy">| Free Shipping on All Orders Above AED 100! &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                <span class="marquee-text-copy">| Free Shipping on All Orders Above AED 100! &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                <span class="marquee-text-copy">| Free Shipping on All Orders Above AED 100! &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                <span class="marquee-text-copy">| Free Shipping on All Orders Above AED 100! &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+            </div>
+        </div>
+    </div>
+
+    <nav class="nav1">
+            <!-- Middle Section -->
+        <div class="nav-mid">
+            <div class="nav-mid-sec">
+                <!-- LEFT: Hamburger -->
+                <div class="nav-left">
+                <i class="fa-solid fa-bars"></i>
+                </div>
+
+                <!-- CENTER: Logo -->
+                <div class="nav-center">
+                <img src="../images/masaali logo.png" alt="Masaali Logo">
+                </div>
+
+                <!-- RIGHT: Cart + Search -->
+                <div class="nav-right">
+                <a href="../pages/cart.html"><i class="fa-solid fa-cart-shopping"></i></a>
+                <i class="fa-solid fa-magnifying-glass search-toggle"></i>
+                </div>
+            </div>
+
+            <!-- Hidden Search Bar -->
+            <div class="nav-search">
+                <input type="text" placeholder="Search for products..." />
+                <i class="fa-solid fa-xmark close-search"></i>
+            </div>
+        </div>
+
+
+
+            <!-- Bottom Section -->
+            <div class="nav-btm-sec">
+                <div class="nav-links">
+                    <a href="../index.html" >Home</a>
+                    <a href="#">About Us</a>
+                    <a href="../pages/products.html">Products</a>
+                    <a href="#">Deals</a>
+                    <a href="#">Blog</a>
+                    <a href="#">Contact Us</a>
+                </div>
+            </div>
+            <!-- SIDE MENU -->
+      <div class="side-menu">
+          <div class="side-menu-header">
+            <i class="fa-solid fa-xmark close-menu"></i>
+          </div>
+          <div class="side-menu-links">
+            <a href="../index.html">Home</a>
+            <a href="#">About Us</a>
+            <a href="../pages/products.html">Products</a>
+            <a href="#">Deals</a>
+            <a href="#">Blog</a>
+            <a href="#">Contact Us</a>
+          </div>
+      </div>
+      <div class="overlay"></div>
+
+    </nav>
+
+
+    <section class="product-section">
+    
+        <div class="product-container">
+
+            <!-- LEFT SIDE IMAGES -->
+            <div class="product-images">
+                <div class="thumbnail-list">
+                    <img src="../images/masali chilli powder- grid image-2.png" alt="" class="thumb active">
+                    <img src="../images/masali chilli powder- grid image.png" alt="" class="thumb">
+                    <img src="../images/masali chilli powder- grid image-2.png" alt="" class="thumb">
+                </div>
+
+                <div class="main-image">
+                    <img src="../images/masali chilli powder- grid image-2.png" alt="" id="displayed-img">
+                    <button class="slide-btn left"></button>
+                    <button class="slide-btn right"></button>
+                </div>
+            </div>
+
+            <!-- RIGHT SIDE PRODUCT DETAILS -->
+            <div class="product-details">
+                <h2 class="product-title">Red Chili Powder 100g</h2><hr>
+                <div class="price">
+                    <span class="old-price">₹44.00</span>
+                    <span class="new-price">₹44.00</span>
+                    <span class="discount">-10%</span>
+                </div>
+                <p class="tax-info">Inclusive of All Taxes</p>
+                <p class="offer">GET EXTRA 10% Off on your first order. Use Code: OFFER10</p>
+
+                <div class="quantity-box">
+                    <button id="decrease">−</button>
+                    <span id="quantity">1</span>
+                    <button id="increase">+</button>
+                </div>
+
+                <a href="../pages/cart.html"><button class="add-to-cart">ADD TO CART</button></a>                        
+                <button class="buy-now">BUY IT NOW</button>
+            </div>
+        </div>
+    </section>
+<!-- --------features SECTION------- -->
+
+    <section class="features">
+        <div class="features-container">
+                <div class="feature-card">
+                <i class="fa-solid fa-check"></i>
+                <h3>Secure Payment</h3>
+                <p>Shop confidently with easy and secure payment options.</p>
+            </div>
+            <div class="feature-card">
+                <i class="fa-solid fa-cart-shopping"></i>
+                <h3>All India Delivery</h3>
+                <p>Swift and Reliable Shipping across India on All Orders.</p>
+            </div>
+            <div class="feature-card">
+                <i class="fa-regular fa-star"></i>
+                <h3>Best Price on Market</h3>
+                <p>Superior Daily Essentials at top market value.</p>
+            </div>
+        </div>
+    </section>
+
+
+<!-- --------favorates sECTION------- -->
+    <section class="section-5">
+        <div class="fifth-section">
+            <h2 class="favorites-title">Customer Favorites</h2>
+            <div class="favorites-slider">
+                <div class="favorites-track">
+                    <!-- Product Card -->
+                    <div class="fav-card">
+                        <div class="product-img fav-img">
+                                <img src="../images/masali chilli powder- grid image-2.png" alt="">
+                            </div>
+                        <p class="fav-name">Red Chili Powder 100g</p>
+                        <p class="fav-price"><b>₹44/-</b> <del>₹44/-</del> <span class="fav-discount">-10%</span></p>
+                        <button class="add-cart">ADD TO CART</button>
+                    </div>
+
+                    <div class="fav-card">
+                        <div class="product-img fav-img">
+                                <img src="../images/TURMERIC powder- grid image.png" alt="">
+                            </div>
+                        <p class="fav-name">Turmeric Powder 100g</p>
+                        <p class="fav-price"><b>₹44/-</b> <del>₹44/-</del> <span class="fav-discount">-10%</span></p>
+                        <button class="add-cart">ADD TO CART</button>
+                    </div>
+                    <div class="fav-card">
+                        <div class="product-img fav-img">
+                                <img src="../images/masali chilli powder- grid image-2.png" alt="">
+                            </div>
+                        <p class="fav-name">Red Chili Powder 100g</p>
+                        <p class="fav-price"><b>₹44/-</b> <del>₹44/-</del> <span class="fav-discount">-10%</span></p>
+                        <button class="add-cart">ADD TO CART</button>
+                    </div>
+
+                    <div class="fav-card">
+                        <div class="product-img fav-img">
+                                <img src="../images/TURMERIC powder- grid image.png" alt="">
+                            </div>
+                        <p class="fav-name">Turmeric Powder 100g</p>
+                        <p class="fav-price"><b>₹44/-</b> <del>₹44/-</del> <span class="fav-discount">-10%</span></p>
+                        <button class="add-cart">ADD TO CART</button>
+                    </div>
+                    <div class="fav-card">
+                        <div class="product-img fav-img">
+                                <img src="../images/masali chilli powder- grid image-2.png" alt="">
+                            </div>
+                        <p class="fav-name">Red Chili Powder 100g</p>
+                        <p class="fav-price"><b>₹44/-</b> <del>₹44/-</del> <span class="fav-discount">-10%</span></p>
+                        <button class="add-cart">ADD TO CART</button>
+                    </div>
+
+                    <div class="fav-card">
+                        <div class="product-img fav-img">
+                                <img src="../images/TURMERIC powder- grid image.png" alt="">
+                            </div>
+                        <p class="fav-name">Turmeric Powder 100g</p>
+                        <p class="fav-price"><b>₹44/-</b> <del>₹44/-</del> <span class="fav-discount">-10%</span></p>
+                        <button class="add-cart">ADD TO CART</button>
+                    </div>
+                    <div class="fav-card">
+                        <div class="product-img fav-img">
+                                <img src="../images/masali chilli powder- grid image-2.png" alt="">
+                            </div>
+                        <p class="fav-name">Red Chili Powder 100g</p>
+                        <p class="fav-price"><b>₹44/-</b> <del>₹44/-</del> <span class="fav-discount">-10%</span></p>
+                        <button class="add-cart">ADD TO CART</button>
+                    </div>
+
+                    <div class="fav-card">
+                        <div class="product-img fav-img">
+                                <img src="../images/TURMERIC powder- grid image.png" alt="">
+                            </div>
+                        <p class="fav-name">Turmeric Powder 100g</p>
+                        <p class="fav-price"><b>₹44/-</b> <del>₹44/-</del> <span class="fav-discount">-10%</span></p>
+                        <button class="add-cart">ADD TO CART</button>
+                    </div>
+
+                </div>  
+            
+            </div>
+                <div class="arrowmarks">
+                <div class="left-arrow">&#8592;</div>
+                <div class="right-arrow">&#8594;</div>
+                </div>  
+        </div>
+    </section>
+
+
+    <footer>
+        <div class="footer-content-wrapper">
+            <div class="footer-brand-section">
+                <div class="logo">
+                    <img src="../images/masaali footer logo.png" alt="Masaali Delicious Logo">
+                </div>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-x-twitter" aria-hidden="true"></i></a>
+                    <a href="#"><i class="fab fa-linkedin li-fa" aria-hidden="true"></i></a>
+                    <a href="#"><i class="fab fa-instagram ig-fa"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-links-group">
+                <h3>Popular Products</h3>
+                <ul>
+                    <li><a href="#">Coriander Seeds</a></li>
+                    <li><a href="#">Fennel Seeds</a></li>
+                    <li><a href="#">Sesame Seeds</a></li>
+                    <li><a href="#">Flex Seeds</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-links-group">
+                <h3>Quick links</h3>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Products</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+            </div>
+        
+
+        <div class="footer-contact-section">
+            <h3>Contact us</h3>
+            
+            <p class="contact-text">
+                <i class="fas fa-map-marker-alt icon-style"></i> 
+                Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for
+            </p>
+            
+            <p class="contact-info">
+                <i class="fas fa-phone icon-style"></i> 
+                +91 88888 11111, <span class="highlight-number">+91 99999 22222</span>
+            </p>
+            
+            <p class="contact-info">
+                <i class="fas fa-envelope icon-style"></i> 
+                <a href="mailto:info@spices.com">info@spices.com</a>
+            </p>
+        </div>
+            </div>
+
+        <div class="footer-bottom-bar">
+            <p class="copyright">
+                masaali.delicious Copyright © - 2025. Spices. All Rights Reserved.
+            </p>
+            <p class="privacy">
+                <a href="#">privacy policy</a>
+            </p>
+        </div>
+
+    </footer>
+
+<script src="../styles/product-details.js"></script>
+</body>
+</html>
