@@ -158,3 +158,11 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
+// weght options  
+const weightBtns = document.querySelectorAll('.weight-btn');
+weightBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    weightBtns.forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+  });
+});
