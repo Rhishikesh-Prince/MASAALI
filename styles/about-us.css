@@ -431,7 +431,7 @@ a:visited, a:active, a:link {
   }
 }
 .what-binds-us {
-  background-color: #faf9f7;
+  /* background-color: #faf9f7 */
   color: #2b1e16;
   padding: 100px 10%;
   font-family: 'Roboto', sans-serif;
@@ -479,7 +479,7 @@ a:visited, a:active, a:link {
 }
 
 .binds-card {
-  background-color: #fff;
+  background-color: #fff  ;
   border: 1px solid #d6c5b3;
   border-radius: 20px;
   padding: 30px 20px;
